@@ -1,9 +1,15 @@
 const express = require('express')
 const app = express()
+const rp = require('request-promise')
 const bodyParser = require('body-parser')
+const $ = require('cheerio')
+
 const cors = require('cors')
 const mongoose = require('mongoose')
 const airportRoutes = express.Router()
+const request = require('request')
+const cheerio = require('cheerio')
+const exphbs = require('express-handlebars')
 const PORT = 4000
 
 let Flights = require('../backend/models/flights.model')
@@ -19,6 +25,80 @@ const connection = mongoose.connection
 
 connection.once('open', function () {
   console.log('MongoDB database connection established successfully')
+})
+
+app.engine(
+  'handlebars',
+  exphbs({
+    defaultLayout: 'main'
+  })
+)
+app.set('view engine', 'handlebars')
+
+app.get('/luton', function (req, res) {
+  request('https://www.london-luton.co.uk/flights', function (
+    error,
+    response,
+    html
+  ) {
+    const length = $(
+      'div.flight-details.saveflightList.arrivals > div.flight-info > span.flightOrgDest',
+      html
+    ).length
+
+    for (let i = 0; i < length; i++) {
+      var fromData = $(
+        'div.flight-details.saveflightList.arrivals > div.flight-info > span.flightOrgDest',
+        html
+      )[i].lastChild.data
+
+      var flightNumber = $(
+        'div.flight-details.saveflightList.arrivals > div.logo-flightNo > span.flightNumber',
+        html
+      )[i].lastChild.data
+
+      var arrivalTime = $(
+        'div.flight-details.saveflightList.arrivals > div.flight-info > span.flightTime',
+        html
+      )[i].lastChild.data
+
+      if (
+        $(
+          'div.flight-details.saveflightList.arrivals > div.flight-info > span.flightStatus',
+          html
+        )[i].lastChild === null
+      ) {
+        var status = 'No Info'
+      } else {
+        var status = $(
+          'div.flight-details.saveflightList.arrivals > div.flight-info > span.flightStatus',
+          html
+        )[i].lastChild.data
+      }
+
+      Flights.create(
+        {
+          scheduled: arrivalTime,
+          flight: flightNumber,
+          arriving_from: fromData,
+          status: status
+        },
+        function (err, inserted) {
+          if (err) {
+            // log the error if one is encountered during the query
+            console.log(err)
+          } else {
+            // otherwise, log the inserted data
+            console.log(inserted)
+          }
+        }
+      )
+      console.log(i)
+      if (i === length - 1) {
+        return res.sendStatus(200)
+      }
+    }
+  })
 })
 
 airportRoutes.route('/').get(function (req, res) {
