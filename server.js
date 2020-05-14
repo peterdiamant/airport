@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const airportRoutes = express.Router()
 const PORT = 4000
 
-let Flights = require('./models/flights.model')
+let Flights = require('./backend/models/flights.model')
 
 app.use(cors())
 app.use(bodyParser.json())
