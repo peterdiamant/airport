@@ -6,7 +6,10 @@ import { addFlights } from '../../redux/actions'
 const HOMEPAGE = props => {
   useEffect(() => {
     lutonGet()
+    heathrowGet()
   }, [])
+
+  // TODO: heathrow and luton not in the same state []
 
   const flightsGet = async text => {
     const response = await flights.get('/flights', null, {
@@ -18,6 +21,16 @@ const HOMEPAGE = props => {
   }
 
   const lutonGet = async text => {
+    const response = await flights.get('/luton', null, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    console.log(JSON.stringify(response.data))
+    flightsGet()
+  }
+
+  const heathrowGet = async text => {
     const response = await flights.get('/luton', null, {
       headers: {
         'Content-Type': 'application/json'

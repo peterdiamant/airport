@@ -36,6 +36,7 @@ app.engine(
 app.set('view engine', 'handlebars')
 
 app.get('/airport/luton', function (req, res) {
+  Flights.collection.remove()
   request('https://www.london-luton.co.uk/flights', function (
     error,
     response,
@@ -95,7 +96,6 @@ app.get('/airport/luton', function (req, res) {
       )
       console.log(i)
       if (i === length - 1) {
-        Flights.collection.remove()
         return res.sendStatus(200)
       }
     }
@@ -103,6 +103,7 @@ app.get('/airport/luton', function (req, res) {
 })
 
 app.get('/airport/heathrow', function (req, res) {
+  Flights.collection.remove()
   request('https://www.heathrow.com/arrivals', function (
     error,
     response,
@@ -172,7 +173,6 @@ app.get('/airport/heathrow', function (req, res) {
       // )
       console.log(i)
       if (i === length - 1) {
-        Flights.collection.remove()
         return res.sendStatus(200)
       }
     }
