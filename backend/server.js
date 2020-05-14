@@ -35,7 +35,7 @@ app.engine(
 )
 app.set('view engine', 'handlebars')
 
-app.get('/luton', function (req, res) {
+app.get('/airport/luton', function (req, res) {
   request('https://www.london-luton.co.uk/flights', function (
     error,
     response,
@@ -85,16 +85,15 @@ app.get('/luton', function (req, res) {
         },
         function (err, inserted) {
           if (err) {
-            // log the error if one is encountered during the query
             console.log(err)
           } else {
-            // otherwise, log the inserted data
             console.log(inserted)
           }
         }
       )
       console.log(i)
       if (i === length - 1) {
+        Flights.collection.remove()
         return res.sendStatus(200)
       }
     }

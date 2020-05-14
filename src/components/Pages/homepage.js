@@ -5,7 +5,7 @@ import { addFlights } from '../../redux/actions'
 
 const HOMEPAGE = props => {
   useEffect(() => {
-    flightsGet()
+    lutonGet()
   }, [])
 
   const flightsGet = async text => {
@@ -15,6 +15,16 @@ const HOMEPAGE = props => {
       }
     })
     props.addFlights(response.data)
+  }
+
+  const lutonGet = async text => {
+    const response = await flights.get('/luton', null, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    console.log(JSON.stringify(response.data))
+    flightsGet()
   }
 
   return <div>HELLO</div>
