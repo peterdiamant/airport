@@ -82,7 +82,8 @@ app.get('/airport/luton', function (req, res) {
           scheduled: arrivalTime,
           flight: flightNumber,
           arriving_from: fromData,
-          status: status
+          status: status,
+          terminal: ''
         },
         function (err, inserted) {
           if (err) {
@@ -92,6 +93,83 @@ app.get('/airport/luton', function (req, res) {
           }
         }
       )
+      console.log(i)
+      if (i === length - 1) {
+        Flights.collection.remove()
+        return res.sendStatus(200)
+      }
+    }
+  })
+})
+
+app.get('/airport/heathrow', function (req, res) {
+  request('https://www.heathrow.com/arrivals', function (
+    error,
+    response,
+    html
+  ) {
+    const length = $(
+      'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3',
+      html
+    ).length
+
+    console.log('LENGTH: ' + length)
+    if (length === 0) {
+      return res.status(200).send('There are no scheduled flights')
+    }
+    for (let i = 0; i < length; i++) {
+      var fromData = $(
+        'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-arriving-from',
+        html
+      )[i].lastChild.data
+
+      var flightNumber = $(
+        'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-flight',
+        html
+      )[i].lastChild.data
+
+      var arrivalTime = $(
+        'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-scheduled',
+        html
+      )[i].lastChild.data
+
+      var terminal = $(
+        'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-terminal',
+        html
+      )[i].lastChild.data
+
+      if (
+        $(
+          'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-status.sm-hide',
+          html
+        )[i].lastChild === null
+      ) {
+        var status = 'No Info'
+      } else {
+        var status = $(
+          'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-status.sm-hide',
+          html
+        )[i].lastChild.text
+      }
+
+      console.log(terminal)
+      // Flights.create(
+      //   {
+      //     airport: 'Heathrow',
+      //     scheduled: arrivalTime,
+      //     flight: flightNumber,
+      //     arriving_from: fromData,
+      //     status: status,
+      //     terminal: terminal
+      //   },
+      //   function (err, inserted) {
+      //     if (err) {
+      //       console.log(err)
+      //     } else {
+      //       console.log(inserted)
+      //     }
+      //   }
+      // )
       console.log(i)
       if (i === length - 1) {
         Flights.collection.remove()

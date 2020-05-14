@@ -15,6 +15,9 @@ let Flights = new Schema({
   },
   status: {
     type: String
+  },
+  terminal: {
+    type: String
   }
 })
 module.exports = mongoose.model('Flights', Flights)
