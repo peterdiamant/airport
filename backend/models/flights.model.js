@@ -10,10 +10,7 @@ let Flights = new Schema({
   arriving_from: {
     type: String
   },
-  airline: {
-    type: String
-  },
-  terminal: {
+  airport: {
     type: String
   },
   status: {

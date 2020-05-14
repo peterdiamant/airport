@@ -78,6 +78,7 @@ app.get('/airport/luton', function (req, res) {
 
       Flights.create(
         {
+          airport: 'Luton',
           scheduled: arrivalTime,
           flight: flightNumber,
           arriving_from: fromData,
