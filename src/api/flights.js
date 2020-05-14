@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'http://localhost:4000/airport',
+  baseURL: 'https://diamant-airport.herokuapp.com/airport',
   headers: {
     'Content-Type': 'application/json'
   }

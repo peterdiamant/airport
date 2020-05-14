@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const airportRoutes = express.Router()
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 
 let Flights = require('./backend/models/flights.model')
 
