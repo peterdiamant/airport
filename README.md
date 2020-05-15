@@ -10,7 +10,7 @@ Starts the web server on port 3000
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### node server.js / nodemon server.js
+### `node server.js / nodemon server.js`
 
 Runs the app backend. Change to /backend folder before running the command above
 It runs the backend service on port:4000
