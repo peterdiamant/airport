@@ -252,8 +252,22 @@ airportRoutes.route("/flights/add").post(function (req, res) {
     });
 });
 
+airportRoutes.route("/heathrow/add").post(function (req, res) {
+  let heathrow = new Heathrow(req.body);
+  heathrow
+    .save()
+    .then((heathrow) => {
+      res.status(200).json({ flights: "flight added successfully" });
+    })
+    .catch((err) => {
+      res.status(500).send("adding new flight failed");
+    });
+});
+
 app.use("/airport", airportRoutes);
 
-app.listen(PORT, function () {
+var server = app.listen(PORT, function () {
   console.log("Server is running on Port: " + PORT);
 });
+
+module.exports = server
