@@ -103,7 +103,7 @@ app.get('/airport/luton', function (req, res) {
 })
 
 app.get('/airport/heathrow', function (req, res) {
-  Flights.collection.remove()
+  //Flights.collection.remove()
   request('https://www.heathrow.com/arrivals', function (
     error,
     response,

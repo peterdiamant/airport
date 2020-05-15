@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path='/main'>
+          <Route exact path='/'>
             <HOMEPAGE />
           </Route>
         </Switch>

@@ -2,14 +2,19 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import flights from '../../api/flights'
 import { addFlights } from '../../redux/actions'
+import FLIGHTSECTION from '../Sections/flightsSection'
 
 const HOMEPAGE = props => {
   useEffect(() => {
-    lutonGet()
-    heathrowGet()
+    getAllData()
   }, [])
 
   // TODO: heathrow and luton not in the same state []
+
+  const getAllData = () => {
+    lutonGet()
+    heathrowGet()
+  }
 
   const flightsGet = async text => {
     const response = await flights.get('/flights', null, {
@@ -40,13 +45,25 @@ const HOMEPAGE = props => {
     flightsGet()
   }
 
-  return <div>HELLO</div>
+  return (
+    <div>
+      <button
+        onClick={() => {
+          getAllData()
+        }}
+      >
+        REFRESH
+      </button>
+      <FLIGHTSECTION />
+    </div>
+  )
 }
 
 const mapStateToProps = state => {
   return {
     visModal: state.visModal,
-    flights: state.flights
+    flights: state.flights,
+    loading: state.loading
   }
 }
 
