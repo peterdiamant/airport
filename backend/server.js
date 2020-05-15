@@ -84,7 +84,7 @@ app.get("/airport/luton", function (req, res) {
           flight: flightNumber,
           arriving_from: fromData,
           status: status,
-          terminal: "",
+          terminal: "N/A",
         },
         function (err, inserted) {
           if (err) {
@@ -143,7 +143,7 @@ app.get("/airport/heathrow", function (req, res) {
         )[i].lastChild.data;
 
         var terminal = $(
-          "div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-terminal",
+          "div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-terminal > p",
           html
         )[i].lastChild.data;
 
@@ -203,10 +203,8 @@ airportRoutes.route("/flights/luton").get(function (req, res) {
   Flights.find(function (err, flights) {
     if (err) {
       console.log(err);
-      return res.status(500);
     } else {
       res.json(flights);
-      return res.status(200);
     }
   });
 });
@@ -222,10 +220,8 @@ airportRoutes.route("/flights/heathrow").get(function (req, res) {
   Heathrow.find(function (err, heathrow) {
     if (err) {
       console.log(err);
-      return res.status(500);
     } else {
       res.json(heathrow);
-      return res.status(200);
     }
   });
 });
