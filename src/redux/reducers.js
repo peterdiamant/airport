@@ -1,8 +1,9 @@
-import { ADD_FLIGHTS } from './actions'
+import { ADD_FLIGHTS, ADD_LOADING } from './actions'
 
 const initialState = {
   visual: true,
-  flights: []
+  flights: [],
+  loading: true
 }
 
 function flightsReducer (state = initialState, action) {
@@ -10,7 +11,8 @@ function flightsReducer (state = initialState, action) {
     case ADD_FLIGHTS:
       return {
         ...state,
-        flights: action.data
+        flights: action.data,
+        loading: false
       }
 
     default:

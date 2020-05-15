@@ -2,11 +2,19 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import flights from '../../api/flights'
 import { addFlights } from '../../redux/actions'
+import FLIGHTSECTION from '../Sections/flightsSection'
 
 const HOMEPAGE = props => {
   useEffect(() => {
-    flightsGet()
+    getAllData()
   }, [])
+
+  // TODO: heathrow and luton not in the same state []
+
+  const getAllData = () => {
+    lutonGet()
+    heathrowGet()
+  }
 
   const flightsGet = async text => {
     const response = await flights.get('/flights', null, {
@@ -17,13 +25,45 @@ const HOMEPAGE = props => {
     props.addFlights(response.data)
   }
 
-  return <div>HELLO</div>
+  const lutonGet = async text => {
+    const response = await flights.get('/luton', null, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    console.log(JSON.stringify(response.data))
+    flightsGet()
+  }
+
+  const heathrowGet = async text => {
+    const response = await flights.get('/luton', null, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    console.log(JSON.stringify(response.data))
+    flightsGet()
+  }
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          getAllData()
+        }}
+      >
+        REFRESH
+      </button>
+      <FLIGHTSECTION />
+    </div>
+  )
 }
 
 const mapStateToProps = state => {
   return {
     visModal: state.visModal,
-    flights: state.flights
+    flights: state.flights,
+    loading: state.loading
   }
 }
 
