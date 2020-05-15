@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Airport actual arrival data scraping from Heathrow and Luton website, with added seach capability
 
 ## Available Scripts
 
@@ -11,6 +11,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### node server.js
+
+Runs the app backend. Change to /backend folder before running the command above
+It runs the backend service on port:4000
 
 ### `yarn test`
 
