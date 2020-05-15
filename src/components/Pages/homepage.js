@@ -74,7 +74,6 @@ const HOMEPAGE = (props) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(JSON.stringify(response.data));
     flightsGetLuton();
   };
 
@@ -84,7 +83,6 @@ const HOMEPAGE = (props) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(JSON.stringify(response.data));
     props.addFlightsLuton(response.data);
     props.setDataShowLuton(true);
   };
@@ -95,7 +93,7 @@ const HOMEPAGE = (props) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(JSON.stringify(response.data));
+    
     props.addFlightsHeathrow(response.data);
     props.setDataShowHeathrow(true);
   };
