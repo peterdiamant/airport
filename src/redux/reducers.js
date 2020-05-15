@@ -3,6 +3,7 @@ import {
   ADD_FLIGHTS_HEATHROW,
   SHOW_DATA_LUTON,
   SHOW_DATA_HEATHROW,
+  ADD_SEARCH_TERM,
 } from "./actions";
 
 const initialState = {
@@ -24,6 +25,12 @@ function flightsReducer(state = initialState, action) {
       return {
         ...state,
         heathrow: action.data,
+      };
+
+    case ADD_SEARCH_TERM:
+      return {
+        ...state,
+        searchTerm: action.data,
       };
 
     case SHOW_DATA_LUTON:

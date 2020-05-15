@@ -6,6 +6,7 @@ import 'semantic-ui-react'
 import '../../src/css/App.css'
 import HOMEPAGE from '../components/Pages/homepage'
 import { addFlightsLuton, addFlightsHeathrow } from '../redux/actions'
+
 class App extends React.Component {
   render () {
     return (
