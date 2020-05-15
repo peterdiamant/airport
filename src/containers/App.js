@@ -22,7 +22,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    visModal: state.visModal,
+    showData: state.showData,
     luton: state.luton,
     heathrow: state.heathrow
   }
