@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import flights from '../../api/flights'
-import { addFlights } from '../../redux/actions'
+
+import { addFlightsLuton, addFlightsHeathrow } from '../../redux/actions'
 import FLIGHTSECTION from '../Sections/flightsSection'
 
 const HOMEPAGE = props => {
@@ -16,13 +17,22 @@ const HOMEPAGE = props => {
     heathrowGet()
   }
 
-  const flightsGet = async text => {
-    const response = await flights.get('/flights', null, {
+  const flightsGetLuton = async text => {
+    const response = await flights.get('/flights/luton', null, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
-    props.addFlights(response.data)
+    props.addFlightsLuton(response.data)
+  }
+
+  const flightsGetHeathrow = async text => {
+    const response = await flights.get('/flights/heathrow', null, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    props.addFlightsHeathrow(response.data)
   }
 
   const lutonGet = async text => {
@@ -32,17 +42,17 @@ const HOMEPAGE = props => {
       }
     })
     console.log(JSON.stringify(response.data))
-    flightsGet()
+    flightsGetLuton()
   }
 
   const heathrowGet = async text => {
-    const response = await flights.get('/luton', null, {
+    const response = await flights.get('/heathrow', null, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
     console.log(JSON.stringify(response.data))
-    flightsGet()
+    flightsGetHeathrow()
   }
 
   return (
@@ -62,14 +72,16 @@ const HOMEPAGE = props => {
 const mapStateToProps = state => {
   return {
     visModal: state.visModal,
-    flights: state.flights,
+    luton: state.luton,
+    heathrow: state.heathrow,
     loading: state.loading
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    addFlights: payload => dispatch(addFlights(payload))
+    addFlightsLuton: payload => dispatch(addFlightsLuton(payload)),
+    addFlightsHeathrow: payload => dispatch(addFlightsHeathrow(payload))
   }
 }
 

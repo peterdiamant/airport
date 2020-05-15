@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import flights from '../../api/flights'
-import { addFlights } from '../../redux/actions'
+import { addFlightsLuton, addFlightsHeathrow } from '../../redux/actions'
 import { makeStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -33,7 +33,19 @@ const FLIGHTSECTION = props => {
         </TableHead>
 
         <TableBody>
-          {props.flights.map(row => (
+          {props.luton.map(row => (
+            <TableRow key={row._id}>
+              <TableCell component='th' scope='row'>
+                {row.airport}
+              </TableCell>
+              <TableCell align='right'>{row.arriving_from}</TableCell>
+              <TableCell align='right'>{row.flight}</TableCell>
+              <TableCell align='right'>{row.scheduled}</TableCell>
+              <TableCell align='right'>{row.status}</TableCell>
+              <TableCell align='right'>{row.terminal}</TableCell>
+            </TableRow>
+          ))}
+          {props.heathrow.map(row => (
             <TableRow key={row._id}>
               <TableCell component='th' scope='row'>
                 {row.airport}
@@ -54,13 +66,15 @@ const FLIGHTSECTION = props => {
 const mapStateToProps = state => {
   return {
     visModal: state.visModal,
-    flights: state.flights
+    luton: state.luton,
+    heathrow: state.heathrow
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    addFlights: payload => dispatch(addFlights(payload))
+    addFlightsLuton: payload => dispatch(addFlightsLuton(payload)),
+    addFlightsHeathrow: payload => dispatch(addFlightsHeathrow(payload))
   }
 }
 

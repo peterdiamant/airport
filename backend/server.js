@@ -3,6 +3,7 @@ const app = express()
 const rp = require('request-promise')
 const bodyParser = require('body-parser')
 const $ = require('cheerio')
+const puppeteer = require('puppeteer')
 
 const cors = require('cors')
 const mongoose = require('mongoose')
@@ -13,6 +14,7 @@ const exphbs = require('express-handlebars')
 const PORT = 4000
 
 let Flights = require('../backend/models/flights.model')
+let Heathrow = require('../backend/models/heathrow.model')
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -103,80 +105,105 @@ app.get('/airport/luton', function (req, res) {
 })
 
 app.get('/airport/heathrow', function (req, res) {
-  //Flights.collection.remove()
-  request('https://www.heathrow.com/arrivals', function (
-    error,
-    response,
-    html
-  ) {
-    const length = $(
-      'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3',
-      html
-    ).length
+  Heathrow.collection.remove()
+  const url = 'https://www.heathrow.com/arrivals'
 
-    console.log('LENGTH: ' + length)
-    if (length === 0) {
-      return res.status(200).send('There are no scheduled flights')
-    }
-    for (let i = 0; i < length; i++) {
-      var fromData = $(
+  puppeteer
+    .launch()
+    .then(function (browser) {
+      return browser.newPage()
+    })
+    .then(function (page) {
+      return page.goto(url).then(function () {
+        return page.content()
+      })
+    })
+    .then(function (html) {
+      const length = $(
         'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-arriving-from',
         html
-      )[i].lastChild.data
+      ).length
+      console.log('LENGTH    ' + length)
+      return res.sendStatus(200)
+    })
+    .catch(function (err) {
+      //handle error
+    })
 
-      var flightNumber = $(
-        'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-flight',
-        html
-      )[i].lastChild.data
+  // request('https://www.heathrow.com/arrivals', function (
+  //   error,
+  //   response,
+  //   html
+  // ) {
+  //   const length = $(
+  //     'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-arriving-from',
+  //     html
+  //   ).length
 
-      var arrivalTime = $(
-        'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-scheduled',
-        html
-      )[i].lastChild.data
+  //   console.log('LENGTH: ' + length)
 
-      var terminal = $(
-        'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-terminal',
-        html
-      )[i].lastChild.data
+  //   if (length === 0) {
+  //     return res.status(200).send(html)
+  //   }
+  //   for (let i = 0; i < length; i++) {
+  //     var fromData = $(
+  //       'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-arriving-from',
+  //       html
+  //     )[i].lastChild.data
 
-      if (
-        $(
-          'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-status.sm-hide',
-          html
-        )[i].lastChild === null
-      ) {
-        var status = 'No Info'
-      } else {
-        var status = $(
-          'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-status.sm-hide',
-          html
-        )[i].lastChild.text
-      }
+  //     var flightNumber = $(
+  //       'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-flight',
+  //       html
+  //     )[i].lastChild.data
 
-      console.log(terminal)
-      // Flights.create(
-      //   {
-      //     airport: 'Heathrow',
-      //     scheduled: arrivalTime,
-      //     flight: flightNumber,
-      //     arriving_from: fromData,
-      //     status: status,
-      //     terminal: terminal
-      //   },
-      //   function (err, inserted) {
-      //     if (err) {
-      //       console.log(err)
-      //     } else {
-      //       console.log(inserted)
-      //     }
-      //   }
-      // )
-      console.log(i)
-      if (i === length - 1) {
-        return res.sendStatus(200)
-      }
-    }
-  })
+  //     var arrivalTime = $(
+  //       'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-scheduled',
+  //       html
+  //     )[i].lastChild.data
+
+  //     var terminal = $(
+  //       'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-terminal',
+  //       html
+  //     )[i].lastChild.data
+
+  //     if (
+  //       $(
+  //         'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-status.sm-hide',
+  //         html
+  //       )[i].lastChild === null
+  //     ) {
+  //       var status = 'No Info'
+  //     } else {
+  //       var status = $(
+  //         'div.airline-listing-table > a.airline-listing-line-item.sm-px3.lg-px3.py4.md-py3 > div.col-status.sm-hide',
+  //         html
+  //       )[i].lastChild.text
+  //     }
+
+  //     // console.log(terminal)
+  //     Heathrow.create(
+  //       {
+  //         airport: 'Heathrow',
+  //         scheduled: arrivalTime,
+  //         flight: flightNumber,
+  //         arriving_from: fromData,
+  //         status: status,
+  //         terminal: terminal
+  //       },
+  //       function (err, inserted) {
+  //         if (err) {
+  //           console.log(err)
+  //         } else {
+  //           console.log(inserted)
+  //         }
+  //       }
+  //     )
+  //     console.log(i)
+  //     if (i === length - 1) {
+  //       return res.sendStatus(200)
+  //     }
+  //   }
+  // })
 })
 
 airportRoutes.route('/').get(function (req, res) {
@@ -189,12 +216,22 @@ airportRoutes.route('/').get(function (req, res) {
   })
 })
 
-airportRoutes.route('/flights').get(function (req, res) {
+airportRoutes.route('/flights/luton').get(function (req, res) {
   Flights.find(function (err, flights) {
     if (err) {
       console.log(err)
     } else {
       res.json(flights)
+    }
+  })
+})
+
+airportRoutes.route('/flights/heathrow').get(function (req, res) {
+  Heathrow.find(function (err, heathrow) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.json(heathrow)
     }
   })
 })
