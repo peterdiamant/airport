@@ -1,0 +1,173 @@
+{
+    "result": [
+      {
+        "Id": "224eedd8-3986-4566-8413-96ed84d080de",
+        "StatNames": [
+          "Player_ShantiesPlayed_WhilstAboardYourSinkingShip"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-06-25T00:00:00Z",
+        "ActiveUntil": "2020-06-25T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-01T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "9fc2f699-ad60-4726-9529-06bc47f8c861",
+        "StatNames": [
+          "Campaign023_HeartOfFire_ChestOfRage_HandedIn"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-06-26T00:00:00Z",
+        "ActiveUntil": "2020-06-26T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-02T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "406af598-a8dd-47f5-9f3b-9a4c1c072338",
+        "StatNames": [
+          "Player_Vomited_OnEnemyPirate_HoldingSword"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-06-27T00:00:00Z",
+        "ActiveUntil": "2020-06-27T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-03T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "ef8c7d6b-2ea5-4d9e-bf0d-4b14875fbd7d",
+        "StatNames": [
+          "TallTale001_ShroudBreaker_Completed",
+          "TallTale002_CursedRogue_Completed",
+          "TallTale003_LegendaryStoryteller_Completed",
+          "TallTale004_StarsOfAThief_Completed",
+          "TallTale005_WildRose_Completed",
+          "TallTale006_ArtOfTheTrickster_Completed",
+          "TallTale007_FateOfTheMorningstar_Completed",
+          "TallTale008_RevengeOfTheMorningstar_Completed",
+          "TallTale009_ShoresOfGold_Completed"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-06-28T00:00:00Z",
+        "ActiveUntil": "2020-06-28T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-04T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "6203a48c-8c17-4e9f-a41e-cc4f8714f950",
+        "StatNames": [
+          "Player_Eaten_Banana_Total",
+          "Player_Eaten_Coconut_Total",
+          "Player_Eaten_Pomegranate_Total",
+          "Player_Eaten_Mango_Total",
+          "Player_Eaten_Pineapple_Total"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 5,
+        "ActiveFrom": "2020-06-29T00:00:00Z",
+        "ActiveUntil": "2020-06-29T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-05T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "1810908d-6aca-44ae-b78f-f24accd8f84f",
+        "StatNames": [
+          "BountySkulls_HandedIn_Total"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 3,
+        "ActiveFrom": "2020-06-30T00:00:00Z",
+        "ActiveUntil": "2020-06-30T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-06T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "6bac45e4-35dc-4a13-a76b-9d01faeb4953",
+        "StatNames": [
+          "Player_Emote_MakeFriend"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-07-01T00:00:00Z",
+        "ActiveUntil": "2020-07-01T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-07T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "82de7f7d-372b-40de-ac4f-a0640e1cd587",
+        "StatNames": [
+          "Player_SufferedFromFoodPoisoning"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-07-02T00:00:00Z",
+        "ActiveUntil": "2020-07-02T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-08T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "a7c1e4d4-a266-4a1c-a2d5-b64184818074",
+        "StatNames": [
+          "Player_NonVerbal_ToPirateOnFerryOfTheDamned"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-07-03T00:00:00Z",
+        "ActiveUntil": "2020-07-03T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-09T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "e4c283dc-8e63-4fd1-b2cc-33164d556ba7",
+        "StatNames": [
+          "Campaign020_TheSeaboundSoul_AshenGaurdians_Defeated"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-07-04T00:00:00Z",
+        "ActiveUntil": "2020-07-04T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-10T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "e5fca5c2-344d-4f0d-8e12-9ad351686af5",
+        "StatNames": [
+          "TallTalesAshenAge_TheAshenDragon_Completed",
+          "TallTalesAshenAge_HeartOfFire_Completed"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-07-05T00:00:00Z",
+        "ActiveUntil": "2020-07-05T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-11T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "52f5aa7a-f605-4e3d-8de0-40ad4ca962e1",
+        "StatNames": [
+          "Campaign020_TheSeaboundSoul_AshenArk_HandedIn"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-07-06T00:00:00Z",
+        "ActiveUntil": "2020-07-06T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-12T23:59:59.9999999Z",
+        "CompletedAt": null
+      },
+      {
+        "Id": "6e26fb71-7607-4e9e-84cf-614e38940672",
+        "StatNames": [
+          "BountySkulls_HandedIn_Mythical"
+        ],
+        "ProgressValue": 0,
+        "Threshold": 1,
+        "ActiveFrom": "2020-07-07T00:00:00Z",
+        "ActiveUntil": "2020-07-07T23:59:59.9999999Z",
+        "ExpireAt": "2020-07-13T23:59:59.9999999Z",
+        "CompletedAt": null
+      }
+    ]
+  }

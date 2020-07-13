@@ -1,21 +1,74 @@
-import { ADD_FLIGHTS } from './actions'
+import {
+  ADD_SCHEDULED_GOALS,
+  ADD_MERGED_GOALS,
+  SHOW_RESULTS,
+  ADD_KEY,
+  ADD_USER_DATA,
+  ADD_USER,
+  ADD_PIRATE,
+  ADD_SERVER,
+} from "./actions";
+import { parseTwoDigitYear } from "moment";
 
 const initialState = {
-  visual: true,
-  flights: []
-}
-
-function flightsReducer (state = initialState, action) {
+  visual: false,
+  keys: "",
+  server: "",
+  merged: [],
+  actualUser: [],
+  user: "",
+  pirate: "",
+  parseTwoDigitYear: "",
+  scheduled: [],
+};
+function goalReducer(state = initialState, action) {
   switch (action.type) {
-    case ADD_FLIGHTS:
+    case ADD_SCHEDULED_GOALS:
       return {
         ...state,
-        flights: action.data
-      }
+        scheduled: action.data,
+      };
+    case ADD_USER_DATA:
+      return {
+        ...state,
+        actualUser: action.data,
+      };
+    case ADD_SERVER:
+      return {
+        ...state,
+        server: action.data,
+      };
+
+    case ADD_USER:
+      return {
+        ...state,
+        user: action.data,
+      };
+    case ADD_PIRATE:
+      return {
+        ...state,
+        pirate: action.data,
+      };
+
+    case ADD_MERGED_GOALS:
+      return {
+        ...state,
+        merged: action.data,
+      };
+    case SHOW_RESULTS:
+      return {
+        ...state,
+        visual: action.data,
+      };
+    case ADD_KEY:
+      return {
+        ...state,
+        keys: action.data,
+      };
 
     default:
-      return state
+      return state;
   }
 }
 
-export default flightsReducer
+export default goalReducer;

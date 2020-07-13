@@ -4,15 +4,15 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'semantic-ui-react'
 import '../../src/css/App.css'
-import HOMEPAGE from '../components/Pages/homepage'
-import { addFlights } from '../redux/actions'
+import MAINPAGE from '../components/Pages/homepage'
+import { addScheduledGoals } from '../redux/actions'
 class App extends React.Component {
   render () {
     return (
       <Router>
         <Switch>
-          <Route exact path='/main'>
-            <HOMEPAGE />
+          <Route exact path='/'>
+            <MAINPAGE />
           </Route>
         </Switch>
       </Router>
@@ -22,14 +22,15 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    visModal: state.visModal,
-    flights: state.flights
+    visual: state.visual,
+    scheduled: state.scheduled,
+    actualUser: state.actualUser
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    addFlights: payload => dispatch(addFlights(payload))
+    addScheduledGoals: payload => dispatch(addScheduledGoals(payload))
   }
 }
 

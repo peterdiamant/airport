@@ -1,0 +1,420 @@
+{
+    "result": [
+      {
+        "Meta": {
+          "campaign": "Competition of Courage",
+          "title": "Boots of courage"
+        },
+        "Id": "cbd62483-df17-4000-90d4-7e7584f1711f",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Arena_Courage_Boots"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Rome_Voyages_Completed_Total",
+            "Threshold": 1,
+            "StatId": 1212992778
+          }
+        ],
+        "VisibleFrom": "2020-05-06T23:00:00+00:00",
+        "VisibleUntil": "2020-06-28T22:59:59.999+00:00",
+        "ActiveFrom": "2020-05-06T23:00:00+00:00",
+        "ActiveUntil": "2020-05-28T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Competition of Courage",
+          "title": "Cutlass of Courage"
+        },
+        "Id": "4257cf6a-c875-4599-980c-3b86e388d562",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Arena_Courage_Cutlass"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Rome_SilverEarned_Lifetime_Total",
+            "Threshold": 25000,
+            "StatId": 234718464
+          }
+        ],
+        "VisibleFrom": "2020-05-06T23:00:00+00:00",
+        "VisibleUntil": "2020-06-28T22:59:59.999+00:00",
+        "ActiveFrom": "2020-05-06T23:00:00+00:00",
+        "ActiveUntil": "2020-05-28T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Competition of Courage",
+          "title": "Figurehead of Courage"
+        },
+        "Id": "6b9f82a3-390f-4fa6-937e-75b25aee92d9",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Arena_Courage_Figurehead"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Rome_Voyages_Completed_First_Total",
+            "Threshold": 20,
+            "StatId": 1957856783
+          }
+        ],
+        "VisibleFrom": "2020-05-06T23:00:00+00:00",
+        "VisibleUntil": "2020-06-28T22:59:59.999+00:00",
+        "ActiveFrom": "2020-05-06T23:00:00+00:00",
+        "ActiveUntil": "2020-05-28T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Hunters Haul 2",
+          "title": "Catch 300 Splashtails"
+        },
+        "Id": "92a276e4-14d1-4c32-96f3-a0f7b51c047e",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "150_Ancient_Coins_May2020_Event"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "HuntersCall_Delivered_RubySplashtail_Total",
+            "Threshold": 300,
+            "StatId": 604742806
+          }
+        ],
+        "VisibleFrom": "2020-05-26T23:00:00+00:00",
+        "VisibleUntil": "2020-06-17T22:59:59.999+00:00",
+        "ActiveFrom": "2020-05-26T23:00:00+00:00",
+        "ActiveUntil": "2020-06-17T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Reapers Rewards",
+          "title": "Reapers Bounty"
+        },
+        "Id": "7e4be4bc-1618-49a6-a8da-eaf8b6026f74",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Reapers_Mask_Bow_Emote"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Campaign022_LegendsOfTheSea_ReapersHideout_DeliverReapersBounty",
+            "Threshold": 3,
+            "StatId": 1362757848
+          }
+        ],
+        "VisibleFrom": "2020-05-26T23:00:00+00:00",
+        "VisibleUntil": "2020-06-08T22:59:59.999+00:00",
+        "ActiveFrom": "2020-05-27T23:00:00+00:00",
+        "ActiveUntil": "2020-06-08T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Reapers Rewards",
+          "title": "Reapers Chest"
+        },
+        "Id": "a60a9bb1-a0ff-4b3e-aaf0-3726f52664b2",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Reapers_JoinUs_Emote"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Campaign017_DarkRelics_ReapersChest_HandedIn_Duke_Total",
+            "Threshold": 3,
+            "StatId": 4080013342
+          }
+        ],
+        "VisibleFrom": "2020-05-26T23:00:00+00:00",
+        "VisibleUntil": "2020-06-08T22:59:59.999+00:00",
+        "ActiveFrom": "2020-05-27T23:00:00+00:00",
+        "ActiveUntil": "2020-06-08T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Reapers Rewards",
+          "title": "Any Reaper Item"
+        },
+        "Id": "7c9d536d-f164-4af5-9ac7-75fefba45d1f",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Reapers_Positive_Emote"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Reapers_Negative_Emote"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Campaign025_ReapersBones_Stolen_ReapersBonesFlag_HandedIn_Total",
+            "Threshold": 10,
+            "StatId": 1300848085
+          }
+        ],
+        "VisibleFrom": "2020-05-26T23:00:00+00:00",
+        "VisibleUntil": "2020-06-08T22:59:59.999+00:00",
+        "ActiveFrom": "2020-05-27T23:00:00+00:00",
+        "ActiveUntil": "2020-06-08T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Tall Tales Re-Told",
+          "title": "Complete The Shroudbreaker"
+        },
+        "Id": "e5bfa002-11af-49f1-b225-b65f9c039874",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Crew_Jacket"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Crew_Gloves"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Trousers"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Belt"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "TallTale001_ShroudBreaker_Completed",
+            "Threshold": 1,
+            "StatId": 3464832343
+          }
+        ],
+        "VisibleFrom": "2020-06-03T23:00:00+00:00",
+        "VisibleUntil": "2020-06-09T22:59:59.999+00:00",
+        "ActiveFrom": "2020-06-03T23:00:00+00:00",
+        "ActiveUntil": "2020-06-09T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Tall Tales Re-Told",
+          "title": "Complete Revenge of the Morning Star"
+        },
+        "Id": "22ffa578-dcc3-4e82-b63f-1d665a0ac90a",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Dress_Jacket"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Dress_Hat"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Captain_Gloves"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Boots"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "TallTale008_RevengeOfTheMorningstar_Completed",
+            "Threshold": 1,
+            "StatId": 1808873677
+          }
+        ],
+        "VisibleFrom": "2020-06-03T23:00:00+00:00",
+        "VisibleUntil": "2020-06-09T22:59:59.999+00:00",
+        "ActiveFrom": "2020-06-03T23:00:00+00:00",
+        "ActiveUntil": "2020-06-09T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Tall Tales Re-Told",
+          "title": "Complete The Seabound Soul"
+        },
+        "Id": "e9b68af5-c7ea-4532-8849-78413901669b",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Dress"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Hook"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Peg_Leg"
+          },
+          {
+            "CompanyId": "none",
+            "RewardId": "Rising_Morningstar_Battle_Hat"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "TallTalesAshenAge_TheAshenDragon_Completed",
+            "Threshold": 1,
+            "StatId": 185140387
+          }
+        ],
+        "VisibleFrom": "2020-06-03T23:00:00+00:00",
+        "VisibleUntil": "2020-06-09T22:59:59.999+00:00",
+        "ActiveFrom": "2020-06-03T23:00:00+00:00",
+        "ActiveUntil": "2020-06-09T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Blighted Bonus",
+          "title": "Turn in Merchant Alliance Cargo"
+        },
+        "Id": "59e31555-8ddc-434e-a6bc-a4a750c8729d",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Blighted_Sails"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "CargoRun_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 3757771769
+          }
+        ],
+        "VisibleFrom": "2020-06-09T23:00:00+00:00",
+        "VisibleUntil": "2020-06-16T22:59:59.999+00:00",
+        "ActiveFrom": "2020-06-09T23:00:00+00:00",
+        "ActiveUntil": "2020-06-16T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Blighted Bonus",
+          "title": "Turn in Gold Hoarders Treasure"
+        },
+        "Id": "5ca47cda-6837-422b-a23b-e437a4224af6",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Blighted_Hull"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Chests_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 1378515285
+          }
+        ],
+        "VisibleFrom": "2020-06-09T23:00:00+00:00",
+        "VisibleUntil": "2020-06-16T22:59:59.999+00:00",
+        "ActiveFrom": "2020-06-09T23:00:00+00:00",
+        "ActiveUntil": "2020-06-16T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Blighted Bonus",
+          "title": "Turn In Order of Souls Skulls"
+        },
+        "Id": "6c6f4d42-f9e6-4d19-bba2-fb61e716c36c",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Blighted_Flag"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "BountySkulls_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 2597089568
+          }
+        ],
+        "VisibleFrom": "2020-06-09T23:00:00+00:00",
+        "VisibleUntil": "2020-06-16T22:59:59.999+00:00",
+        "ActiveFrom": "2020-06-09T23:00:00+00:00",
+        "ActiveUntil": "2020-06-16T22:59:59.999+00:00"
+      },
+      {
+        "Meta": {
+          "campaign": "Blighted Bonus",
+          "title": "Turn in Athenas Fortune Loot"
+        },
+        "Id": "c411959f-2018-4749-9f9d-e84ffdb08dac",
+        "Rewards": [
+          {
+            "CompanyId": "none",
+            "RewardId": "Blighted_Figurehead"
+          }
+        ],
+        "Stats": [
+          {
+            "StatName": "Chests_HandedIn_Legend_ChestOfLegends",
+            "Threshold": 30,
+            "StatId": 424338824
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Common_AthenasTrinket_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 2459846618
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Common_AthenasSkull_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 720990920
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Common_AthenasCrate_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 235875353
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Common_AthenasKeg_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 3612277773
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Rare_AthenasTrinket_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 2185430146
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Rare_AthenasSkull_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 2118119884
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Rare_AthenasCrate_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 1523167005
+          },
+          {
+            "StatName": "Campaign024_AthenasRun_Rare_AthenasKeg_HandedIn_Total",
+            "Threshold": 30,
+            "StatId": 3022290394
+          }
+        ],
+        "VisibleFrom": "2020-06-09T23:00:00+00:00",
+        "VisibleUntil": "2020-06-16T22:59:59.999+00:00",
+        "ActiveFrom": "2020-06-09T23:00:00+00:00",
+        "ActiveUntil": "2020-06-16T22:59:59.999+00:00"
+      }
+    ]
+  }
