@@ -86,14 +86,15 @@ const HEADER = (props) => {
       }
     }
     props.addMergedGoals(element);
+
     return true;
   };
 
   const dataGet = async () => {
     try {
-      if (!props.server) {
-        window.alert("Please select a server");
-        throw "not valid server error";
+      if (!props.server || !props.keys) {
+        window.alert("Server or Token is missing");
+        throw "Server or Token is missing";
       }
       const response = await axios.get(
         "https://cors-anywhere.herokuapp.com/" + props.server + "/campaigns",
@@ -106,9 +107,11 @@ const HEADER = (props) => {
         props.showResults(true)
       );
 
-      props.addScheduledGoals(response.data);
+      const addscheduled = await props.addScheduledGoals(response.data);
+      window.alert("CAMPAIGN DATA LOADED SUCCESSFULLY");
     } catch (e) {
       console.log("ERROR: " + e);
+      window.alert("CAMPAIGN DATA LOADING ERROR: " + e);
     }
   };
 
@@ -134,7 +137,8 @@ const HEADER = (props) => {
         }
       );
       const adding = await props.addUserData(response.data.ScavengerHunts);
-      mergedValues();
+      const merged = await mergedValues();
+      window.alert("PROGRESS DATA LOADED SUCCESSFULLY");
     } catch (e) {
       console.log("ERROR: " + e);
     }
@@ -147,7 +151,7 @@ const HEADER = (props) => {
           <select
             options={options}
             onChange={serverChange}
-            value={defaultOption}
+            value={props.server}
           >
             <option value="">SERVER</option>
             <option value="https://athservices.test.msrareservices.com/campaign/app/api">
